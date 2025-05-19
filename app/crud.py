@@ -2,7 +2,7 @@ from sqlalchemy import select
 
 from .database import new_session
 from .models import URLModel
-from .schemas import URLPOSTschames, URLGETschemas
+from .schemas import URLPOSTschames
 from .keygen import create_random_key
 
 

@@ -1,6 +1,6 @@
 
-from fastapi import FastAPI, APIRouter
-from app.schemas import URLPOSTschames, URLGETschemas
+from fastapi import APIRouter
+from app.schemas import URLPOSTschames
 from app.crud import create_url_db, get_url_db_by_key
 
 
@@ -10,7 +10,7 @@ router = APIRouter(
 )
 
 
-@router.post("/")
+@router.post("/", status_code=201)
 async def create_urls(url: URLPOSTschames):
     new_url_db = await create_url_db(url=url)
     return new_url_db
